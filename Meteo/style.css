@@ -18,3 +18,34 @@ body {
   max-width: 400px; /* Larghezza massima del contenitore */
   box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Ombra leggera */
 }
+
+#weather {
+  margin-top: 20px;
+  font-size: 1rem;
+}
+
+.weather-icon {
+  width: 64px; /* Dimensione icona meteo */
+  height: 64px;
+}
+
+#cards {
+  margin-top: 24px;
+  display: flex; /* Dispone le card in riga */
+  flex-direction: row;
+  flex-wrap: wrap; /* Va a capo se non c'è spazio */
+  gap: 16px; /* Spazio tra le card */
+  justify-content: center; /* Centra le card orizzontalmente */
+  width: 100%;
+}
+
+.weather-card {
+  background: #f7fafc; /* Sfondo chiaro per la card */
+  border-radius: 8px; /* Angoli arrotondati */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07); /* Ombra leggera */
+  padding: 16px;
+  text-align: center;
+  max-width: 350px; /* Larghezza massima della card */
+  min-width: 220px; /* Larghezza minima della card */
+  margin: 0;
+}
