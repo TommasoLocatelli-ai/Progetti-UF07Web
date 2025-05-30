@@ -58,6 +58,64 @@ Contiene tutta la logica dell’applicazione:
 
 ---
 
+## Specifiche tecniche
+
+- **Tecnologie usate:**  
+  - HTML5 per la struttura della pagina  
+  - CSS3 per la presentazione e la responsività  
+  - JavaScript vanilla per la logica e l’interattività
+
+- **Compatibilità:**  
+  - Funziona su tutti i browser moderni  
+  - Non richiede installazione né dipendenze esterne
+
+---
+
+## Logica e implementazione
+
+### Struttura HTML (`index.html`)
+
+- Contiene un form per l’inserimento del nome e dello stato dell’attività.
+- Presenta selettori per la ricerca e il filtro delle attività.
+- Visualizza dinamicamente la lista delle attività tramite un contenitore dedicato.
+- Collega i file CSS e JavaScript.
+
+### Stili CSS (`style.css`)
+
+- Utilizza Flexbox per centrare il contenuto della pagina sia verticalmente che orizzontalmente.
+- Applica colori di sfondo diversi alle attività in base allo stato (`da-fare`, `in-corso`, `completato`).
+- Rende la lista delle attività scrollabile se supera una certa altezza.
+- Migliora la leggibilità con padding, bordi arrotondati e ombre leggere.
+
+### Logica JavaScript (`script.js`)
+
+- **Struttura dati:**  
+  - Le attività sono memorizzate in un array di oggetti, ciascuno con `id`, `name` e `status`.
+  - Ogni attività ha un identificatore univoco incrementale.
+
+- **Funzioni principali:**
+  - `addTask()`: aggiunge una nuova attività se il nome non è vuoto.
+  - `deleteTask(id)`: rimuove un’attività tramite il suo ID.
+  - `editTask(id)`: permette di modificare il nome di un’attività tramite un prompt.
+  - `changeStatus(id)`: consente di cambiare lo stato di un’attività tramite un prompt, accettando solo valori validi.
+  - `renderTasks()`: aggiorna dinamicamente la visualizzazione della lista, applicando filtri di testo e di stato. Ogni attività viene rappresentata con i pulsanti per modificarla, cambiarne lo stato o rimuoverla.
+
+- **Ricerca e filtro:**  
+  - La ricerca avviene in tempo reale tramite l’input di testo.
+  - Il filtro per stato permette di mostrare solo le attività di un certo tipo o tutte.
+
+- **Aggiornamento dinamico:**  
+  - Ogni modifica (aggiunta, rimozione, modifica, cambio stato, filtro) aggiorna immediatamente la lista visualizzata senza ricaricare la pagina.
+
+---
+
+## Note di implementazione
+
+- Tutta la logica è lato client: i dati non vengono salvati su server o in locale (nessun uso di localStorage).
+- L’interfaccia è pensata per essere semplice, accessibile e facilmente estendibile.
+
+---
+
 ## Esempio di utilizzo
 
 - **Aggiungi attività:**  
