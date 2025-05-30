@@ -128,3 +128,91 @@ Contiene tutta la logica dell’applicazione:
   Clicca su "Cambia Stato" e inserisci uno stato valido ("da-fare", "in-corso", "completato").
 
 ---
+
+
+# UF07Web-n2
+
+# Cronometro Digitale
+
+Questa applicazione web è un cronometro digitale realizzato in HTML, CSS e JavaScript puro. Permette di avviare, fermare, resettare il tempo e salvare tempi parziali (giri), con una grafica semplice e moderna. Tutto funziona lato client, senza necessità di backend o database.
+
+---
+
+## Descrizione funzionale
+
+- **Visualizzazione tempo:** Il tempo viene mostrato in formato mm:ss:cc (minuti, secondi, centesimi).
+- **Controlli principali:**  
+  - **Start:** Avvia il conteggio del tempo.
+  - **Stop:** Ferma il conteggio senza azzerare il tempo.
+  - **Reset:** Riporta il cronometro a 00:00:00 senza cancellare i giri salvati.
+  - **Giro:** Salva il tempo attuale come tempo parziale (giro), che viene mostrato in una lista sotto il cronometro.
+- **Gestione giri:** Ogni giro può essere eliminato singolarmente cliccando sulla "×" accanto al tempo.
+- **Interfaccia responsive:** Il cronometro è centrato nella pagina e la lista dei giri è scrollabile se troppo lunga.
+
+---
+
+## Esempio di utilizzo
+
+- Premi **Start** per avviare il cronometro.
+- Premi **Giro** per salvare un tempo parziale.
+- Premi **Stop** per fermare il cronometro.
+- Premi **Reset** per azzerare il tempo (i giri restano visibili).
+- Clicca sulla "×" accanto a un giro per eliminarlo dalla lista.
+
+---
+
+## Specifiche tecniche
+
+- **Tecnologie usate:**
+  - HTML5 per la struttura della pagina.
+  - CSS3 per la presentazione e la responsività.
+  - JavaScript vanilla per la logica e l’interattività.
+- **Compatibilità:**  
+  - Funziona su tutti i browser moderni.
+  - Non richiede installazione né dipendenze esterne.
+- **Salvataggio dati:**  
+  - Tutto avviene in memoria: i dati non vengono salvati su server o in locale.
+
+---
+
+## Logica e implementazione
+
+### Struttura HTML (`index.html`)
+
+- Un contenitore centrale con titolo, display del tempo, pulsanti di controllo e lista dei giri.
+- Pulsanti con eventi associati alle funzioni JavaScript (`startTimer`, `stopTimer`, `resetTimer`, `lapTime`).
+- Lista `<ul id="laps"></ul>` per i tempi parziali.
+
+### Stili CSS (`style.css`)
+
+- Usa Flexbox per centrare il contenuto sia verticalmente che orizzontalmente.
+- Il display del tempo è grande e ben visibile.
+- I pulsanti sono colorati e facilmente distinguibili.
+- La lista dei giri è scrollabile se supera una certa altezza.
+- Ogni giro ha una "×" per la rimozione rapida.
+
+### Logica JavaScript (`script.js`)
+
+- **Variabili principali:**
+  - `minutes`, `seconds`, `milliseconds`: tengono traccia del tempo trascorso.
+  - `timer`: identificatore del timer per il setTimeout.
+  - `running`: stato del cronometro (in esecuzione o fermo).
+- **Funzioni:**
+  - `updateDisplay()`: aggiorna il display del tempo.
+  - `startTimer()`: avvia il cronometro se non già in esecuzione.
+  - `runTimer()`: aggiorna il tempo ogni 10ms, gestendo il passaggio di centesimi, secondi e minuti.
+  - `stopTimer()`: ferma il cronometro.
+  - `resetTimer()`: azzera il tempo senza cancellare i giri.
+  - `lapTime()`: salva il tempo attuale come giro e lo aggiunge alla lista, con una "×" per la rimozione.
+- **Gestione giri:**  
+  - Ogni giro è un `<li>` con il tempo e una "×" che, se cliccata, elimina solo quel giro.
+
+---
+
+## Avvio rapido
+
+1. Scarica o clona il progetto.
+2. Apri `index.html` con un browser moderno.
+3. Usa il cronometro direttamente dalla pagina.
+
+---
