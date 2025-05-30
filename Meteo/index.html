@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meteo Locale</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Meteo Locale</h1>
+    <div style="margin-bottom: 10px;">
+      <label>
+        <input type="radio" name="mode" value="local" checked onchange="toggleInputs()"> Usa posizione attuale
+      </label>
+      <label style="margin-left: 15px;">
+        <input type="radio" name="mode" value="manual" onchange="toggleInputs()"> Inserisci coordinate
+      </label>
+    </div>
+    <div id="manualInputs" style="display:none; margin-bottom:10px;"> <!-- Input per le coordinate -->
+      <input type="number" id="latInput" placeholder="Latitudine" step="any" style="width:120px;">
+      <input type="number" id="lonInput" placeholder="Longitudine" step="any" style="width:120px;">
+    </div>
+    <button onclick="getWeather()">Ottieni meteo attuale</button>
+    <div id="weather"></div> <!-- Area per messaggi o dati meteo temporanei -->
+  </div>
+  <div id="cards"></div> <!-- Card dei risultati meteo vengono aggiunte qui -->
+  <script src="script.js"></script>
+</body>
+</html>
