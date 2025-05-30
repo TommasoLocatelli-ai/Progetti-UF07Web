@@ -1,0 +1,20 @@
+body {
+  font-family: Arial, sans-serif; /* Font principale */
+  background: #eef1f4; /* Sfondo grigio chiaro */
+  min-height: 100vh; /* Occupa almeno tutta l'altezza della finestra */
+  margin: 0;
+  display: flex; /* Usa Flexbox per il layout */
+  flex-direction: column; /* Disposizione verticale degli elementi */
+  align-items: center; /* Centra orizzontalmente */
+  justify-content: center; /* Centra verticalmente */
+  padding: 20px;
+}
+
+.container {
+  text-align: center;
+  background: white;
+  padding: 30px;
+  border-radius: 10px; /* Angoli arrotondati */
+  max-width: 400px; /* Larghezza massima del contenitore */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Ombra leggera */
+}
