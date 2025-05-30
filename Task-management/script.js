@@ -33,3 +33,33 @@ function changeStatus(id) { // Funzione per cambiare lo stato di un'attività
     renderTasks();
   }
 }
+
+function renderTasks() { // Funzione per visualizzare le attività nella pagina
+  const container = document.getElementById('taskList');
+  const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+  const filter = document.getElementById('filterStatus').value;
+  container.innerHTML = ''; // Resetta il contenitore delle attività
+
+  tasks // Filtra le attività in base alla query di ricerca e allo stato selezionato
+    .filter(task => task.name.toLowerCase().includes(searchQuery)) // Filtra le attività in base alla query di ricerca
+    .filter(task => filter === 'all' || task.status === filter) // Qua invece in base allo stato selezionato
+    .forEach(task => {
+      const statoTesto = {
+        "da-fare": "Da fare",
+        "in-corso": "In corso",
+        "completato": "Completato"
+      }[task.status] || task.status;
+
+      const div = document.createElement('div'); // Crea un nuovo elemento div per ogni attività
+      div.className = `task ${task.status}`;
+      div.innerHTML = `
+        <strong>${task.name}</strong> <em>(${statoTesto})</em>
+        <div class="task-actions">
+          <button onclick="editTask(${task.id})">Modifica</button>
+          <button onclick="changeStatus(${task.id})">Cambia Stato</button>
+          <button onclick="deleteTask(${task.id})">Rimuovi</button> 
+        </div>
+      `; // Aggiunge i pulsanti per modificare, cambiare stato e rimuovere l'attività
+      container.appendChild(div); // Aggiunge il nuovo elemento div al contenitore delle attività
+    });
+}
