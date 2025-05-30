@@ -130,6 +130,7 @@ Contiene tutta la logica dell’applicazione:
 ---
 
 
+
 # UF07Web-n2
 
 # Cronometro Digitale
@@ -216,3 +217,82 @@ Questa applicazione web è un cronometro digitale realizzato in HTML, CSS e Java
 3. Usa il cronometro direttamente dalla pagina.
 
 ---
+
+
+
+# UF07Web-n3
+
+# Meteo Locale
+
+Questa applicazione web consente di visualizzare le condizioni meteo attuali di una località, scegliendo tra la posizione attuale del dispositivo o l’inserimento manuale di latitudine e longitudine. L’interfaccia è semplice, moderna e completamente in italiano.
+
+---
+
+## Descrizione funzionale
+
+- **Scelta modalità:** L’utente può scegliere se usare la posizione attuale (tramite geolocalizzazione del browser) o inserire manualmente le coordinate.
+- **Visualizzazione meteo:** I dati meteo vengono mostrati in una card, con informazioni su latitudine, longitudine, temperatura, umidità, vento, copertura nuvolosa, precipitazioni e codice meteo.
+- **Più ricerche:** Ogni ricerca aggiunge una nuova card meteo, senza sovrascrivere le precedenti.
+- **Icone meteo:** Ogni card mostra un’icona rappresentativa delle condizioni meteo correnti.
+- **Interfaccia responsive:** Le card sono disposte in orizzontale e vanno a capo se lo spazio non basta.
+
+---
+
+## Esempio di utilizzo
+
+- Seleziona "Usa posizione attuale" e clicca su "Ottieni meteo attuale" per vedere il meteo della tua posizione.
+- Seleziona "Inserisci coordinate", inserisci latitudine e longitudine, poi clicca su "Ottieni meteo attuale" per vedere il meteo di una località specifica.
+- Ogni ricerca aggiunge una nuova card con i dati meteo richiesti.
+
+---
+
+## Specifiche tecniche
+
+- **Tecnologie usate:**
+  - HTML5 per la struttura della pagina.
+  - CSS3 per la presentazione e la responsività.
+  - JavaScript vanilla per la logica e l’interattività.
+- **Compatibilità:**
+  - Funziona su tutti i browser moderni.
+  - Non richiede installazione né dipendenze esterne.
+- **Salvataggio dati:**
+  - Tutto avviene in memoria: i dati non vengono salvati su server o in locale.
+
+---
+
+## Logica e implementazione
+
+### Struttura HTML (`index.html`)
+
+- Un contenitore centrale con titolo, radio button per la scelta della modalità, input per le coordinate (mostrati solo se necessario), pulsante per la richiesta dei dati e area per i messaggi.
+- Un contenitore separato (`#cards`) dove vengono aggiunte dinamicamente le card dei risultati meteo.
+- Collegamento ai file CSS e JavaScript.
+
+### Stili CSS (`style.css`)
+
+- Usa Flexbox per centrare il contenuto e disporre le card in orizzontale con wrapping automatico.
+- Le card hanno sfondo chiaro, ombra, bordi arrotondati e sono ben distanziate.
+- L’interfaccia è moderna, leggibile e responsive.
+
+### Logica JavaScript (`script.js`)
+
+- **Gestione modalità:**  
+  - La funzione `toggleInputs()` mostra o nasconde gli input manuali in base alla modalità selezionata.
+- **Richiesta dati meteo:**  
+  - La funzione `getWeather()` determina la modalità e recupera le coordinate (da geolocalizzazione o input manuale).
+  - Se la geolocalizzazione fallisce, viene mostrato un messaggio di errore.
+  - I dati vengono richiesti tramite fetch all’API Open-Meteo.
+- **Visualizzazione risultati:**  
+  - Ogni risposta genera una nuova card con i dati meteo, aggiunta al contenitore `#cards`.
+  - Le icone meteo sono generate dinamicamente tramite emoji disegnate su canvas.
+- **Gestione errori:**  
+  - Messaggi chiari vengono mostrati in caso di errori di input o di rete.
+
+---
+
+## Avvio rapido
+
+1. Scarica o clona il progetto.
+2. Apri `index.html` con un browser moderno.
+3. Scegli la modalità desiderata e visualizza i dati meteo.
+
