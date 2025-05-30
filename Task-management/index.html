@@ -7,6 +7,29 @@
   <link rel="stylesheet" href="style.css">  // Collegamento alla pagina CSS
 </head>
 <body>
+  <div class="container">
+    <h1>Gestione Attività</h1>
+    
+    <input type="text" id="taskName" placeholder="Nome attività"> // Campo di input per il nome dell'attività
+    <select id="taskStatus"> // Selettore per lo stato dell'attività
+      <option value="da-fare">Da fare</option>
+      <option value="in-corso">In corso</option>
+      <option value="completato">Completato</option>
+    </select>
+    <button onclick="addTask()">Aggiungi Attività</button> // Pulsante per aggiungere l'attività tramite la funzione addTask()
 
+    <hr>
+
+    <input type="text" id="searchInput" placeholder="Cerca per nome" oninput="renderTasks()"> // Campo di input per la ricerca delle attività
+    <select id="filterStatus" onchange="renderTasks()"> // Selettore per filtrare le attività in base allo stato
+      <option value="all">Tutti</option>
+      <option value="da-fare">Da fare</option>
+      <option value="in-corso">In corso</option>
+      <option value="completato">Completato</option>
+    </select>
+
+    <div id="taskList"></div> // Contenitore che mostra la lista delle attività in modo dinamico
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
