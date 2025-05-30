@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cronometro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Cronometro Digitale</h1>
+    <div id="display">00:00:00</div> <!-- Visualizzazione tempo -->
+    <div class="buttons">
+      <button onclick="startTimer()">Start</button> <!-- Avvia il cronometro -->
+      <button onclick="stopTimer()">Stop</button> <!-- Ferma il cronometro -->
+      <button onclick="resetTimer()">Reset</button> <!-- Azzera il cronometro -->
+      <button onclick="lapTime()">Giro</button> <!-- Salva un tempo parziale -->
+    </div>
+    <ul id="laps"></ul> <!-- Lista dei tempi parziali (giri) -->
+  </div>
+
+  <script src="script.js"></script> <!-- Script con la logica del cronometro -->
+</body>
+</html>
