@@ -1,0 +1,56 @@
+body {
+  font-family: 'Arial', sans-serif; /* Font principale */
+  background-color: #f0f2f5; /* Sfondo grigio chiaro */
+  display: flex; /* Usa Flexbox per centrare il contenuto */
+  justify-content: center; /* Centra orizzontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 100vh; /* Altezza viewport */
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  background: white;
+  padding: 30px;
+  border-radius: 12px; /* Angoli arrotondati */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Ombra leggera */
+}
+
+#display {
+  font-size: 3rem; /* Dimensione grande per il cronometro */
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.buttons button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:nth-child(1) { background-color: #4CAF50; color: white; } /* Start */
+button:nth-child(2) { background-color: #f44336; color: white; } /* Stop */
+button:nth-child(3) { background-color: #2196F3; color: white; } /* Reset */
+button:nth-child(4) { background-color: #ff9800; color: white; } /* Giro */
+
+#laps {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+  max-height: 200px; /* Lista giri scrollabile se troppo lunga */
+  overflow-y: auto;
+}
+
+#laps li {
+  background: #eee;
+  padding: 8px;
+  margin: 4px 0;
+  border-radius: 4px;
+}
+
+.remove-lap:hover {
+  color: #b71c1c; /* Colore rosso scuro al passaggio del mouse sulla X */
+}
