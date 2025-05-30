@@ -1,0 +1,47 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0; /* Rimuove margini predefiniti */
+  min-height: 100vh; /* Altezza minima per coprire l'intera finestra */
+  display: flex; /* Usa Flexbox per centrare il contenuto */
+  justify-content: center;
+  align-items: center;
+  background: #f5f5f5;
+}
+
+.container {
+  background: #fff;
+  max-width: 450px;
+  padding: 30px 24px; /* Padding interno per il contenuto */
+  border-radius: 10px; /* Angoli arrotondati */
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08); /* Ombra per dare profondità */
+  margin: 0 auto;
+}
+
+.task {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px; /* Spazio tra le attività */
+  border-radius: 5px;
+}
+
+.task.completato {
+  background-color: #24b646;
+}
+
+.task.in-corso {
+  background-color: #facd38;
+}
+
+.task.da-fare {
+  background-color: #e73d4b;
+}
+
+.task-actions button {
+  margin-right: 5px; /* Spazio tra i pulsanti */
+}
+
+#taskList {
+  max-height: 300px; /* Lista scrollabile se troppo lunga */
+  overflow-y: auto; /* Aggiunge lo scroll verticale */
+  margin-top: 16px;
+}
